@@ -9,17 +9,13 @@
     <div>
         <h1><a href="/"> Блог недопрограммистов</a></h1>
     </div>
-
-    <div>
-        <p>published: 21.09.2023, 16:43</p>
-        <h2><a href="">My first post</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
-
-    <div>
-        <p>published: 21.09.2023, 16:43</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
+    {% for post in posts%}
+        <div style="border: 1px dotted black;">
+            <h3 style="border-bottom: 1px solid gray;"><a href="#">{{ post.title }}</a></h3>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <p><b>Published: {{ post.published_date }}</b></p>
+        </div>
+        <br>
+    {% endfor %}
 </body>
 </html>
